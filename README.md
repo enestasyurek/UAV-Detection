@@ -72,16 +72,11 @@ pip install -r requirements.txt
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/uav-yolov11m-tracker.git
-cd uav-yolov11m-tracker
+git clone https://github.com/enestasyurek/UAV-Detection.git
+cd UAV-Detection
 ```
 
-2. Navigate to the application directory:
-```bash
-cd botsort_app
-```
-
-3. Install required packages:
+2. Install required packages:
 ```bash
 pip install -r requirements.txt
 ```
