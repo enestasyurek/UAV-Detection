@@ -2,10 +2,7 @@
 
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![YOLOv11](https://img.shields.io/badge/YOLOv11-Latest-green.svg)](https://github.com/ultralytics/ultralytics)
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Streamlit](https://img.shields.io/badge/Streamlit-App-red.svg)](https://streamlit.io/)
 
-A state-of-the-art drone detection and tracking system powered by fine-tuned YOLOv11m model with BoTSORT tracker. This project provides real-time drone detection capabilities with both command-line and web-based interfaces.
 
 ## 🌟 Features
 
