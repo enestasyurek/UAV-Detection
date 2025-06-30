@@ -40,19 +40,19 @@ The model was trained on a comprehensive UAV dataset using RunPod's NVIDIA GeFor
 ## 📈 Training Results
 
 ### Performance Curves
-![Training Results](botsort_app/uav-fine-tune/results.png)
+![Training Results](uav-fine-tune/results.png)
 
 ### Confusion Matrix
-![Confusion Matrix](botsort_app/uav-fine-tune/confusion_matrix_normalized.png)
+![Confusion Matrix](uav-fine-tune/confusion_matrix_normalized.png)
 
 ### PR Curve
-![PR Curve](botsort_app/uav-fine-tune/PR_curve.png)
+![PR Curve](uav-fine-tune/PR_curve.png)
 
 ### Sample Predictions
 <table>
 <tr>
-<td><img src="botsort_app/uav-fine-tune/val_batch0_pred.jpg" width="400"/></td>
-<td><img src="botsort_app/uav-fine-tune/val_batch1_pred.jpg" width="400"/></td>
+<td><img src="uav-fine-tune/val_batch0_pred.jpg" width="400"/></td>
+<td><img src="uav-fine-tune/val_batch1_pred.jpg" width="400"/></td>
 </tr>
 <tr>
 <td align="center">Validation Batch 0</td>
