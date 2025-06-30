@@ -1,0 +1,406 @@
+→ Training on: NVIDIA GeForce RTX 5090
+Ultralytics 8.3.160 🚀 Python-3.11.11 torch-2.8.0.dev20250319+cu128 CUDA:0 (NVIDIA GeForce RTX 5090, 32110MiB)
+engine/trainer: agnostic_nms=False, amp=True, augment=False, auto_augment=randaugment, batch=-1, bgr=0.0, box=7.5, cache=disk, cfg=None, classes=None, close_mosaic=5, cls=0.5, conf=None, copy_paste=0.0, copy_paste_mode=flip, cos_lr=True, cutmix=0.0, data=uavdata/data.yaml, degrees=0.0, deterministic=False, device=0, dfl=1.5, dnn=False, dropout=0.0, dynamic=False, embed=None, epochs=40, erasing=0.4, exist_ok=False, fliplr=0.5, flipud=0.0, format=torchscript, fraction=1.0, freeze=10, half=False, hsv_h=0.015, hsv_s=0.7, hsv_v=0.4, imgsz=768, int8=False, iou=0.7, keras=False, kobj=1.0, line_width=None, lr0=0.01, lrf=0.01, mask_ratio=4, max_det=300, mixup=0.0, mode=train, model=yolo11m.pt, momentum=0.937, mosaic=1.0, multi_scale=False, name=uav_fast_yolo11m_20250627_2126, nbs=64, nms=False, opset=None, optimize=False, optimizer=auto, overlap_mask=True, patience=100, perspective=0.0, plots=True, pose=12.0, pretrained=True, profile=False, project=runs, rect=False, resume=False, retina_masks=False, save=True, save_conf=False, save_crop=False, save_dir=runs/uav_fast_yolo11m_20250627_2126, save_frames=False, save_json=False, save_period=5, save_txt=False, scale=0.5, seed=0, shear=0.0, show=False, show_boxes=True, show_conf=True, show_labels=True, simplify=True, single_cls=False, source=None, split=val, stream_buffer=False, task=detect, time=None, tracker=botsort.yaml, translate=0.1, val=True, verbose=True, vid_stride=1, visualize=False, warmup_bias_lr=0.1, warmup_epochs=3.0, warmup_momentum=0.8, weight_decay=0.0005, workers=14, workspace=None
+Overriding model.yaml nc=80 with nc=4
+
+                   from  n    params  module                                       arguments                     
+  0                  -1  1      1856  ultralytics.nn.modules.conv.Conv             [3, 64, 3, 2]                 
+  1                  -1  1     73984  ultralytics.nn.modules.conv.Conv             [64, 128, 3, 2]               
+  2                  -1  1    111872  ultralytics.nn.modules.block.C3k2            [128, 256, 1, True, 0.25]     
+  3                  -1  1    590336  ultralytics.nn.modules.conv.Conv             [256, 256, 3, 2]              
+  4                  -1  1    444928  ultralytics.nn.modules.block.C3k2            [256, 512, 1, True, 0.25]     
+  5                  -1  1   2360320  ultralytics.nn.modules.conv.Conv             [512, 512, 3, 2]              
+  6                  -1  1   1380352  ultralytics.nn.modules.block.C3k2            [512, 512, 1, True]           
+  7                  -1  1   2360320  ultralytics.nn.modules.conv.Conv             [512, 512, 3, 2]              
+  8                  -1  1   1380352  ultralytics.nn.modules.block.C3k2            [512, 512, 1, True]           
+  9                  -1  1    656896  ultralytics.nn.modules.block.SPPF            [512, 512, 5]                 
+ 10                  -1  1    990976  ultralytics.nn.modules.block.C2PSA           [512, 512, 1]                 
+ 11                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']          
+ 12             [-1, 6]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 13                  -1  1   1642496  ultralytics.nn.modules.block.C3k2            [1024, 512, 1, True]          
+ 14                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']          
+ 15             [-1, 4]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 16                  -1  1    542720  ultralytics.nn.modules.block.C3k2            [1024, 256, 1, True]          
+ 17                  -1  1    590336  ultralytics.nn.modules.conv.Conv             [256, 256, 3, 2]              
+ 18            [-1, 13]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 19                  -1  1   1511424  ultralytics.nn.modules.block.C3k2            [768, 512, 1, True]           
+ 20                  -1  1   2360320  ultralytics.nn.modules.conv.Conv             [512, 512, 3, 2]              
+ 21            [-1, 10]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 22                  -1  1   1642496  ultralytics.nn.modules.block.C3k2            [1024, 512, 1, True]          
+ 23        [16, 19, 22]  1   1414108  ultralytics.nn.modules.head.Detect           [4, [256, 512, 512]]          
+YOLO11m summary: 231 layers, 20,056,092 parameters, 20,056,076 gradients, 68.2 GFLOPs
+
+Transferred 643/649 items from pretrained weights
+Freezing layer 'model.0.conv.weight'
+Freezing layer 'model.0.bn.weight'
+Freezing layer 'model.0.bn.bias'
+Freezing layer 'model.1.conv.weight'
+Freezing layer 'model.1.bn.weight'
+Freezing layer 'model.1.bn.bias'
+Freezing layer 'model.2.cv1.conv.weight'
+Freezing layer 'model.2.cv1.bn.weight'
+Freezing layer 'model.2.cv1.bn.bias'
+Freezing layer 'model.2.cv2.conv.weight'
+Freezing layer 'model.2.cv2.bn.weight'
+Freezing layer 'model.2.cv2.bn.bias'
+Freezing layer 'model.2.m.0.cv1.conv.weight'
+Freezing layer 'model.2.m.0.cv1.bn.weight'
+Freezing layer 'model.2.m.0.cv1.bn.bias'
+Freezing layer 'model.2.m.0.cv2.conv.weight'
+Freezing layer 'model.2.m.0.cv2.bn.weight'
+Freezing layer 'model.2.m.0.cv2.bn.bias'
+Freezing layer 'model.2.m.0.cv3.conv.weight'
+Freezing layer 'model.2.m.0.cv3.bn.weight'
+Freezing layer 'model.2.m.0.cv3.bn.bias'
+Freezing layer 'model.2.m.0.m.0.cv1.conv.weight'
+Freezing layer 'model.2.m.0.m.0.cv1.bn.weight'
+Freezing layer 'model.2.m.0.m.0.cv1.bn.bias'
+Freezing layer 'model.2.m.0.m.0.cv2.conv.weight'
+Freezing layer 'model.2.m.0.m.0.cv2.bn.weight'
+Freezing layer 'model.2.m.0.m.0.cv2.bn.bias'
+Freezing layer 'model.2.m.0.m.1.cv1.conv.weight'
+Freezing layer 'model.2.m.0.m.1.cv1.bn.weight'
+Freezing layer 'model.2.m.0.m.1.cv1.bn.bias'
+Freezing layer 'model.2.m.0.m.1.cv2.conv.weight'
+Freezing layer 'model.2.m.0.m.1.cv2.bn.weight'
+Freezing layer 'model.2.m.0.m.1.cv2.bn.bias'
+Freezing layer 'model.3.conv.weight'
+Freezing layer 'model.3.bn.weight'
+Freezing layer 'model.3.bn.bias'
+Freezing layer 'model.4.cv1.conv.weight'
+Freezing layer 'model.4.cv1.bn.weight'
+Freezing layer 'model.4.cv1.bn.bias'
+Freezing layer 'model.4.cv2.conv.weight'
+Freezing layer 'model.4.cv2.bn.weight'
+Freezing layer 'model.4.cv2.bn.bias'
+Freezing layer 'model.4.m.0.cv1.conv.weight'
+Freezing layer 'model.4.m.0.cv1.bn.weight'
+Freezing layer 'model.4.m.0.cv1.bn.bias'
+Freezing layer 'model.4.m.0.cv2.conv.weight'
+Freezing layer 'model.4.m.0.cv2.bn.weight'
+Freezing layer 'model.4.m.0.cv2.bn.bias'
+Freezing layer 'model.4.m.0.cv3.conv.weight'
+Freezing layer 'model.4.m.0.cv3.bn.weight'
+Freezing layer 'model.4.m.0.cv3.bn.bias'
+Freezing layer 'model.4.m.0.m.0.cv1.conv.weight'
+Freezing layer 'model.4.m.0.m.0.cv1.bn.weight'
+Freezing layer 'model.4.m.0.m.0.cv1.bn.bias'
+Freezing layer 'model.4.m.0.m.0.cv2.conv.weight'
+Freezing layer 'model.4.m.0.m.0.cv2.bn.weight'
+Freezing layer 'model.4.m.0.m.0.cv2.bn.bias'
+Freezing layer 'model.4.m.0.m.1.cv1.conv.weight'
+Freezing layer 'model.4.m.0.m.1.cv1.bn.weight'
+Freezing layer 'model.4.m.0.m.1.cv1.bn.bias'
+Freezing layer 'model.4.m.0.m.1.cv2.conv.weight'
+Freezing layer 'model.4.m.0.m.1.cv2.bn.weight'
+Freezing layer 'model.4.m.0.m.1.cv2.bn.bias'
+Freezing layer 'model.5.conv.weight'
+Freezing layer 'model.5.bn.weight'
+Freezing layer 'model.5.bn.bias'
+Freezing layer 'model.6.cv1.conv.weight'
+Freezing layer 'model.6.cv1.bn.weight'
+Freezing layer 'model.6.cv1.bn.bias'
+Freezing layer 'model.6.cv2.conv.weight'
+Freezing layer 'model.6.cv2.bn.weight'
+Freezing layer 'model.6.cv2.bn.bias'
+Freezing layer 'model.6.m.0.cv1.conv.weight'
+Freezing layer 'model.6.m.0.cv1.bn.weight'
+Freezing layer 'model.6.m.0.cv1.bn.bias'
+Freezing layer 'model.6.m.0.cv2.conv.weight'
+Freezing layer 'model.6.m.0.cv2.bn.weight'
+Freezing layer 'model.6.m.0.cv2.bn.bias'
+Freezing layer 'model.6.m.0.cv3.conv.weight'
+Freezing layer 'model.6.m.0.cv3.bn.weight'
+Freezing layer 'model.6.m.0.cv3.bn.bias'
+Freezing layer 'model.6.m.0.m.0.cv1.conv.weight'
+Freezing layer 'model.6.m.0.m.0.cv1.bn.weight'
+Freezing layer 'model.6.m.0.m.0.cv1.bn.bias'
+Freezing layer 'model.6.m.0.m.0.cv2.conv.weight'
+Freezing layer 'model.6.m.0.m.0.cv2.bn.weight'
+Freezing layer 'model.6.m.0.m.0.cv2.bn.bias'
+Freezing layer 'model.6.m.0.m.1.cv1.conv.weight'
+Freezing layer 'model.6.m.0.m.1.cv1.bn.weight'
+Freezing layer 'model.6.m.0.m.1.cv1.bn.bias'
+Freezing layer 'model.6.m.0.m.1.cv2.conv.weight'
+Freezing layer 'model.6.m.0.m.1.cv2.bn.weight'
+Freezing layer 'model.6.m.0.m.1.cv2.bn.bias'
+Freezing layer 'model.7.conv.weight'
+Freezing layer 'model.7.bn.weight'
+Freezing layer 'model.7.bn.bias'
+Freezing layer 'model.8.cv1.conv.weight'
+Freezing layer 'model.8.cv1.bn.weight'
+Freezing layer 'model.8.cv1.bn.bias'
+Freezing layer 'model.8.cv2.conv.weight'
+Freezing layer 'model.8.cv2.bn.weight'
+Freezing layer 'model.8.cv2.bn.bias'
+Freezing layer 'model.8.m.0.cv1.conv.weight'
+Freezing layer 'model.8.m.0.cv1.bn.weight'
+Freezing layer 'model.8.m.0.cv1.bn.bias'
+Freezing layer 'model.8.m.0.cv2.conv.weight'
+Freezing layer 'model.8.m.0.cv2.bn.weight'
+Freezing layer 'model.8.m.0.cv2.bn.bias'
+Freezing layer 'model.8.m.0.cv3.conv.weight'
+Freezing layer 'model.8.m.0.cv3.bn.weight'
+Freezing layer 'model.8.m.0.cv3.bn.bias'
+Freezing layer 'model.8.m.0.m.0.cv1.conv.weight'
+Freezing layer 'model.8.m.0.m.0.cv1.bn.weight'
+Freezing layer 'model.8.m.0.m.0.cv1.bn.bias'
+Freezing layer 'model.8.m.0.m.0.cv2.conv.weight'
+Freezing layer 'model.8.m.0.m.0.cv2.bn.weight'
+Freezing layer 'model.8.m.0.m.0.cv2.bn.bias'
+Freezing layer 'model.8.m.0.m.1.cv1.conv.weight'
+Freezing layer 'model.8.m.0.m.1.cv1.bn.weight'
+Freezing layer 'model.8.m.0.m.1.cv1.bn.bias'
+Freezing layer 'model.8.m.0.m.1.cv2.conv.weight'
+Freezing layer 'model.8.m.0.m.1.cv2.bn.weight'
+Freezing layer 'model.8.m.0.m.1.cv2.bn.bias'
+Freezing layer 'model.9.cv1.conv.weight'
+Freezing layer 'model.9.cv1.bn.weight'
+Freezing layer 'model.9.cv1.bn.bias'
+Freezing layer 'model.9.cv2.conv.weight'
+Freezing layer 'model.9.cv2.bn.weight'
+Freezing layer 'model.9.cv2.bn.bias'
+Freezing layer 'model.23.dfl.conv.weight'
+AMP: running Automatic Mixed Precision (AMP) checks...
+AMP: checks passed ✅
+train: Fast image access ✅ (ping: 0.3±0.0 ms, read: 41.0±10.9 MB/s, size: 61.2 KB)
+train: Scanning /workspace/uavdata/labels/train... 63197 images, 0 backgrounds, 
+train: New cache created: /workspace/uavdata/labels/train.cache
+AutoBatch: Computing optimal batch size for imgsz=768 at 60.0% CUDA memory utilization.
+AutoBatch: CUDA:0 (NVIDIA GeForce RTX 5090) 31.36G total, 0.20G reserved, 0.19G allocated, 30.96G free
+      Params      GFLOPs  GPU_mem (GB)  forward (ms) backward (ms)                   input                  output
+    20056092       98.21         1.210         15.29         100.8        (1, 3, 768, 768)                    list
+    20056092       196.4         1.661         6.382         40.04        (2, 3, 768, 768)                    list
+    20056092       392.8         2.624         8.139         43.51        (4, 3, 768, 768)                    list
+    20056092       785.7         4.524         15.47         42.75        (8, 3, 768, 768)                    list
+    20056092        1571         8.806         30.92         47.45       (16, 3, 768, 768)                    list
+    20056092        3143        16.951         65.05          70.2       (32, 3, 768, 768)                    list
+    20056092        6285        11.992         138.2         180.2       (64, 3, 768, 768)                    list
+AutoBatch: Using batch-size 36 for CUDA:0 19.36G/31.36G (62%) ✅
+train: Fast image access ✅ (ping: 0.6±0.5 ms, read: 36.1±33.8 MB/s, size: 61.8 KB)
+train: Scanning /workspace/uavdata/labels/train.cache... 63197 images, 0 backgro
+train: Caching images (101.9GB Disk): 100%|██████████| 63197/63197 [29:09<00:00,
+val: Fast image access ✅ (ping: 0.4±0.1 ms, read: 13.0±5.2 MB/s, size: 75.5 KB)
+val: Scanning /workspace/uavdata/labels/val.cache... 15683 images, 0 backgrounds
+val: Caching images (33.0GB Disk): 100%|██████████| 15683/15683 [00:11<00:00, 13
+Plotting labels to runs/uav_fast_yolo11m_20250627_2126/labels.jpg... 
+optimizer: 'optimizer=auto' found, ignoring 'lr0=0.01' and 'momentum=0.937' and determining best 'optimizer', 'lr0' and 'momentum' automatically... 
+optimizer: SGD(lr=0.01, momentum=0.9) with parameter groups 106 weight(decay=0.0), 113 weight(decay=0.0005625000000000001), 112 bias(decay=0.0)
+Image sizes 768 train, 768 val
+Using 14 dataloader workers
+Logging results to runs/uav_fast_yolo11m_20250627_2126
+Starting training for 40 epochs...
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+       1/40      13.9G      1.106     0.8756      1.077         25        768: 1
+                 Class     Images  Instances      Box(P          R      mAP50  m
+                   all      15683      15860      0.973      0.956       0.98      0.662
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+       2/40      29.8G       1.14     0.6332      1.096         32        768: 1
+                 Class     Images  Instances      Box(P          R      mAP50  m
+                   all      15683      15860      0.976      0.966      0.984      0.684
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+       3/40      14.8G      1.123     0.6152      1.091         26        768: 1
+                 Class     Images  Instances      Box(P          R      mAP50  m
+                   all      15683      15860      0.973      0.964      0.984      0.678
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+       4/40      19.2G      1.109     0.5971      1.087         28        768: 1
+                 Class     Images  Instances      Box(P          R      mAP50  m
+                   all      15683      15860      0.978      0.964      0.988      0.702
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+       5/40      28.2G      1.063     0.5525      1.064         31        768: 1
+                 Class     Images  Instances      Box(P          R      mAP50  m
+                   all      15683      15860      0.985      0.971      0.991      0.719
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+       6/40      29.4G      1.034     0.5259      1.052         32        768: 1
+                 Class     Images  Instances      Box(P          R      mAP50  m
+                   all      15683      15860      0.984      0.975      0.992      0.728
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+       7/40      18.7G      1.019     0.5104       1.04         25        768: 1
+                 Class     Images  Instances      Box(P          R      mAP50  m
+                   all      15683      15860      0.983       0.98      0.993      0.737
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+       8/40      19.1G          1     0.4951      1.034         30        768: 1
+                 Class     Images  Instances      Box(P          R      mAP50  m
+                   all      15683      15860      0.987      0.977      0.993      0.737
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+       9/40        15G     0.9859     0.4849      1.026         34        768: 1
+                 Class     Images  Instances      Box(P          R      mAP50  m
+                   all      15683      15860      0.986      0.978      0.993      0.742
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      10/40      17.3G     0.9797     0.4792      1.023         27        768: 1
+                 Class     Images  Instances      Box(P          R      mAP50  m
+                   all      15683      15860      0.987      0.979      0.993      0.746
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      11/40      29.3G     0.9707     0.4696       1.02         27        768: 1
+                 Class     Images  Instances      Box(P          R      mAP50  m
+                   all      15683      15860      0.986      0.981      0.993      0.751
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      12/40      29.7G     0.9624     0.4645      1.016         25        768: 1
+                 Class     Images  Instances      Box(P          R      mAP50  m
+                   all      15683      15860      0.988      0.983      0.994      0.754
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      13/40      13.5G     0.9525     0.4572      1.011         33        768: 1
+                 Class     Images  Instances      Box(P          R      mAP50  m
+                   all      15683      15860      0.989      0.983      0.993      0.756
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      14/40      29.6G     0.9487     0.4531      1.009         28        768: 1
+                 Class     Images  Instances      Box(P          R      mAP50  m
+                   all      15683      15860      0.986      0.984      0.993      0.757
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      15/40      27.4G     0.9402     0.4455      1.004         31        768: 1
+                 Class     Images  Instances      Box(P          R      mAP50  m
+                   all      15683      15860      0.986      0.985      0.994      0.759
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      16/40      6.27G     0.9348     0.4415      1.005         28        768: 1
+                 Class     Images  Instances      Box(P          R      mAP50  m
+                   all      15683      15860      0.987      0.985      0.994       0.76
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      17/40      13.7G     0.9283     0.4353     0.9982         36        768: 1
+                 Class     Images  Instances      Box(P          R      mAP50  m
+                   all      15683      15860      0.987      0.986      0.994      0.761
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      18/40      29.8G     0.9253     0.4333     0.9976         32        768: 1
+                 Class     Images  Instances      Box(P          R      mAP50  m
+                   all      15683      15860      0.988      0.986      0.994      0.761
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      19/40      13.4G     0.9173     0.4263     0.9933         26        768: 1
+                 Class     Images  Instances      Box(P          R      mAP50  m
+                   all      15683      15860      0.988      0.985      0.994      0.761
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      20/40      15.7G     0.9031     0.4194     0.9889         35        768: 1
+                 Class     Images  Instances      Box(P          R      mAP50  m
+                   all      15683      15860      0.988      0.985      0.994      0.762
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      21/40      14.8G     0.9005     0.4137     0.9866         32        768: 1
+                 Class     Images  Instances      Box(P          R      mAP50  m
+                   all      15683      15860      0.988      0.986      0.994      0.762
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      22/40      15.2G      0.891     0.4095     0.9844         26        768: 1
+                 Class     Images  Instances      Box(P          R      mAP50  m
+                   all      15683      15860      0.988      0.986      0.994      0.762
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      23/40      16.8G     0.8841      0.403     0.9801         36        768: 1
+                 Class     Images  Instances      Box(P          R      mAP50  m
+                   all      15683      15860      0.989      0.986      0.994      0.763
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      24/40      15.3G     0.8789     0.4007     0.9767         29        768: 1
+                 Class     Images  Instances      Box(P          R      mAP50  m
+                   all      15683      15860      0.989      0.986      0.994      0.764
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      25/40      19.5G     0.8769     0.3959     0.9751         28        768: 1
+                 Class     Images  Instances      Box(P          R      mAP50  m
+                   all      15683      15860      0.989      0.986      0.994      0.764
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      26/40      18.6G     0.8664     0.3879      0.972         31        768: 1
+                 Class     Images  Instances      Box(P          R      mAP50  m
+                   all      15683      15860      0.989      0.986      0.994      0.764
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      27/40      13.8G     0.8597     0.3846     0.9691         29        768: 1
+                 Class     Images  Instances      Box(P          R      mAP50  m
+                   all      15683      15860      0.989      0.987      0.994      0.765
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      28/40      29.8G     0.8538     0.3805     0.9687         23        768: 1
+                 Class     Images  Instances      Box(P          R      mAP50  m
+                   all      15683      15860      0.989      0.987      0.994      0.766
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      29/40      26.5G     0.8469     0.3726     0.9634         27        768: 1
+                 Class     Images  Instances      Box(P          R      mAP50  m
+                   all      15683      15860      0.989      0.987      0.994      0.766
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      30/40      18.5G     0.8418      0.368     0.9639         31        768: 1
+                 Class     Images  Instances      Box(P          R      mAP50  m
+                   all      15683      15860      0.989      0.987      0.994      0.767
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      31/40      15.1G      0.831     0.3619     0.9594         33        768: 1
+                 Class     Images  Instances      Box(P          R      mAP50  m
+                   all      15683      15860       0.99      0.987      0.994      0.767
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      32/40      2.99G      0.829     0.3594     0.9585         37        768: 1
+                 Class     Images  Instances      Box(P          R      mAP50  m
+                   all      15683      15860       0.99      0.987      0.994      0.768
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      33/40      17.3G     0.8249     0.3545     0.9557         31        768: 1
+                 Class     Images  Instances      Box(P          R      mAP50  m
+                   all      15683      15860      0.989      0.987      0.994      0.768
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      34/40      7.37G     0.8165     0.3491     0.9525         30        768: 1
+                 Class     Images  Instances      Box(P          R      mAP50  m
+                   all      15683      15860       0.99      0.987      0.994      0.769
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      35/40      29.3G     0.8156     0.3462     0.9519         24        768: 1
+                 Class     Images  Instances      Box(P          R      mAP50  m
+                   all      15683      15860      0.989      0.987      0.994      0.769
+Closing dataloader mosaic
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      36/40      19.3G      0.776     0.2958     0.9198         16        768: 1
+                 Class     Images  Instances      Box(P          R      mAP50  m
+                   all      15683      15860      0.989      0.987      0.994      0.769
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      37/40      14.4G     0.7687     0.2907      0.916         17        768: 1
+                 Class     Images  Instances      Box(P          R      mAP50  m
+                   all      15683      15860      0.989      0.987      0.994       0.77
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      38/40      29.7G     0.7643     0.2881     0.9146         17        768: 1
+                 Class     Images  Instances      Box(P          R      mAP50  m
+                   all      15683      15860      0.989      0.987      0.994      0.771
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      39/40      27.6G     0.7609     0.2862     0.9129         18        768: 1
+                 Class     Images  Instances      Box(P          R      mAP50  m
+                   all      15683      15860      0.989      0.987      0.994      0.771
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      40/40      29.7G     0.7606     0.2841     0.9129         17        768: 1
+                 Class     Images  Instances      Box(P          R      mAP50  m
+                   all      15683      15860      0.989      0.987      0.994      0.771
+
+40 epochs completed in 5.633 hours.
+Optimizer stripped from runs/uav_fast_yolo11m_20250627_2126/weights/last.pt, 40.5MB
+Optimizer stripped from runs/uav_fast_yolo11m_20250627_2126/weights/best.pt, 40.5MB
+
+Validating runs/uav_fast_yolo11m_20250627_2126/weights/best.pt...
+Ultralytics 8.3.160 🚀 Python-3.11.11 torch-2.8.0.dev20250319+cu128 CUDA:0 (NVIDIA GeForce RTX 5090, 32110MiB)
+YOLO11m summary (fused): 125 layers, 20,033,116 parameters, 0 gradients, 67.7 GFLOPs
+                 Class     Images  Instances      Box(P          R      mAP50  m
+                   all      15683      15860      0.989      0.987      0.994      0.771
+                 drone      15683      15860      0.989      0.987      0.994      0.771
+Speed: 0.1ms preprocess, 1.3ms inference, 0.0ms loss, 0.3ms postprocess per image
+Results saved to runs/uav_fast_yolo11m_20250627_2126

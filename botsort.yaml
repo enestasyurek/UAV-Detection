@@ -1,0 +1,25 @@
+# BoTSORT Tracker Konfigürasyonu
+# Video tracking için optimize edilmiş ayarlar
+
+tracker_type: botsort
+
+# Tracking parametreleri
+track_high_thresh: 0.5    # İlk eşleştirme için eşik değeri
+track_low_thresh: 0.1     # İkinci eşleştirme için eşik değeri  
+new_track_thresh: 0.6     # Yeni track başlatma eşiği
+track_buffer: 30          # Track silme için buffer süresi
+match_thresh: 0.8         # Eşleştirme eşiği
+
+# BoTSORT özellikleri
+cmc_method: sparseOptFlow # Kamera hareketi telafisi
+proximity_thresh: 0.5     # Yakınlık eşiği
+appearance_thresh: 0.25   # Görünüm benzerliği eşiği
+with_reid: false          # ReID özelliği (kapalı)
+
+# Kalman filtre ayarları
+gmc_method: sparseOptFlow # Global hareket telafisi
+min_box_area: 10         # Minimum kutu alanı
+
+# Diğer ayarlar
+mot20: false             # MOT20 dataset modu
+fuse_score: true         # Skor füzyonu aktif

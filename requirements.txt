@@ -1,0 +1,16 @@
+# YOLO BoTSORT Tracker Gereksinimleri
+
+# Core
+streamlit>=1.28.0
+ultralytics>=8.0.0
+opencv-python>=4.8.0
+numpy>=1.24.0
+Pillow>=10.0.0
+
+# Video işleme
+opencv-python-headless>=4.8.0  # Sunucu ortamları için
+
+# YOLO bağımlılıkları
+torch>=2.0.0
+torchvision>=0.15.0
+scipy>=1.10.0  # BoTSORT için gerekli
