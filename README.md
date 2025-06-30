@@ -51,11 +51,11 @@ The model was trained on a comprehensive UAV dataset using RunPod's NVIDIA GeFor
 ### Sample Predictions
 <table>
 <tr>
-<td><img src="uav-fine-tune/val_batch0_pred.jpg" width="400"/></td>
+<td><img src="uav-fine-tune/train_batch0.jpg" width="400"/></td>
 <td><img src="uav-fine-tune/val_batch1_pred.jpg" width="400"/></td>
 </tr>
 <tr>
-<td align="center">Validation Batch 0</td>
+<td align="center">Train Batch 0</td>
 <td align="center">Validation Batch 1</td>
 </tr>
 </table>
